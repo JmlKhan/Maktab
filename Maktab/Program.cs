@@ -1,4 +1,14 @@
+using Maktab.Model;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
+
+//connecting to db
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContext<AppDbContext>(op =>
+{
+    op.UseSqlServer(connectionString);
+});
 
 // Add services to the container.
 
