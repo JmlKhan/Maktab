@@ -8,6 +8,6 @@ namespace Maktab.Model
             :base(options)
         {}
 
-        public DbSet<User> Users { get; set; }
+        public virtual DbSet<User> Users { get; set; }
     }
 }
